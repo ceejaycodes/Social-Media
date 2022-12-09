@@ -1,7 +1,7 @@
 # Social-Media
 A Social Media app built with Django and Javascript
 
-** Demo Link ** : [https://youtu.be/ur7i68F6u5M]
+## Demo Link : [https://youtu.be/ur7i68F6u5M]
 
 
 Using Python, JavaScript, HTML, and CSS, complete the implementation of a social network that allows users to make posts, follow other users, and “like” posts. You must fulfill the following requirements:
