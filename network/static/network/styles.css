@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    font-family: garamondNew;
+    color: whitesmoke;
+    background-color: #152238;
+}
+
+html{
+    font-size: 72%;
+    color: whitesmoke;
+    background-color: #152238;
+    min-height: 100%;
+}
+
+.body{
+    color: whitesmoke;
+    background-color: #152238;
+    min-height: 100%;
+
+}
+
+main{
+    background-color: #152238;
+    color: whitesmoke;
+}
+
+@font-face {
+    font-family: garamondNew;
+    src: url("static/network/fonts/EBGaramond08-Regular.ttf");
+}
+
+#forg {
+    margin:19px 0px;
+}
+
+
+
+.logform{
+    margin: 55px;
+}
+
+/* .form-control{
+    text-wrap:
+} */
+
+
+a{
+    cursor: pointer;
+    text-decoration: none;
+    color: whitesmoke;
+    font-family: garamondNew;
+
+}
+
+.editable{
+    cursor: pointer;
+}
+
+
+
+.eachpost{
+    border-right-width: 2px;
+    border-bottom: rgba(195, 191, 191, 0.481) .5px solid;
+    
+
+    padding:18px;
+}
+
+
+#compose{
+    margin: 19px;
+}
+
+#compose > * {
+    margin: 22px;
+}
+
+.container{
+    color: whitesmoke;
+    background-color: #152238;
+    min-height: 100%;
+}
+
+#edtfrm{
+   resize: none;
+    height: 20em; 
+}
+
+
+#btn{
+    width: 4rem;
+    padding: 8px;
+}
+
+#edit{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 3em;
+
+}
+
+
+#edit > *{
+    margin: 12px;
+
+}

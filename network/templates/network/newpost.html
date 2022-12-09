@@ -1,0 +1,17 @@
+{% extends "network/layout.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block body %}
+<div class="container">
+
+<div id="compose">
+    <strong><h2>Add A New Post</h2></strong>
+    <form method='post' action="{% url 'newpost'%}" >
+        {% csrf_token %}
+        {{postform|crispy}}
+        <input type='submit' value='Post' class="btn btn-primary" id='forg'>
+    </form>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends "network/layout.html" %}
+
+
+{% block body %}
+<h2>Based On People You Follow</h2>
+<div id='root'>
+    <div class="list-group">
+    <ul>
+        {% for pos in posts%}
+        <li>
+            <div class="eachpost">
+                <div class="d-flex w-100 justify-content-between">
+                    <img src="{{pos.author.avatar_url}}" style="height: 70px; width: 70px; border-radius: 44px;">
+                  <small class="text-muted">{{pos.time}}</small>
+                </div>
+                <a href="{% url 'profile' pos.author.id%}"> <h5>{{pos.author| title}}</h5></a>
+                <p class="mb-1">{{pos.post}}</p> 
+
+
+                <div class="lkspn d-flex justify-content-between"> 
+                    <span class ="lkdv"> 
+                    <img 
+                    class="likebtn"
+                    id = "{{pos.id}}"
+                    data-likers = "{{pos.liked_by.count}}"
+                    {%if request.user in pos.liked_by.all %} 
+                        src="static/network/like.svg" data-like ="true"
+                    {%else%}
+                        src="static/network/liken.svg" data-like = "false"
+                    {% endif %}
+                    style="height: 20px">
+
+                    <p id = "c{{pos.id}}">{{pos.liked_by.count}}</p>
+
+                    </span>
+
+
+                    {% if request.user == pos.author%}
+                    <p class="editable" 
+                    id="{{pos.id}}"
+                    data-post="{{pos.post}}">Edit</p>
+                        {% endif %}
+                
+                
+                </div>
+
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+<div class="pagination">
+    <span class="step-links">
+        {% if posts.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ posts.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ posts.number }} of {{ posts.paginator.num_pages }}.
+        </span>
+
+        {% if posts.has_next %}
+            <a href="?page={{ posts.next_page_number }}">next</a>
+            <a href="?page={{ posts.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+</div>
+<div id="edit">
+    <h2>Edit Post</h2>
+    <div>
+        
+        <form>
+        <textarea class='form-control' id='edtfrm' autofocus required max-length ='350'>  
+        </textarea>
+        <button class="btn btn-primary" id="submitt">Edit</button>
+    </form>
+    </div>
+</div>
+
+{% endblock %}
+
+
+   
