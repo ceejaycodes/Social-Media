@@ -128,3 +128,5 @@ LOGIN_URL = '/login'
 LOGIN_REDIRECT_URL='/'
 
 CRISPY_TEMPLATE_PACK = 'uni_form'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
