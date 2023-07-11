@@ -103,6 +103,12 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+CORS_ALLOW_ALL_ORIGINS = True # If this is used then `CORS_ALLOWED_ORIGINS` will not have any effect
+CORS_ALLOW_CREDENTIALS = True
+
+
+CSRF_TRUSTED_ORIGINS = ['http://13.53.205.246', 'http://marvelsocial.cry8.io']
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
